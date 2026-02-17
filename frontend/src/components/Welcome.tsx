@@ -3,6 +3,11 @@ import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
+/**
+ * Welcome page component featuring a product carousel and hero section
+ * Displays featured products with auto-scrolling carousel functionality
+ * @returns {JSX.Element} The welcome page with product showcase
+ */
 export default function Welcome() {
   const sliderRef = useRef<Slider | null>(null);
   const { darkMode } = useTheme();

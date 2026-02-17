@@ -27,6 +27,16 @@ interface ProductFormProps {
   onSave: () => void;
 }
 
+/**
+ * Product form component for creating or editing products
+ * Provides input fields for all product attributes with validation
+ * @param {ProductFormProps} props - Component props
+ * @param {Product} props.product - Optional existing product to edit
+ * @param {Supplier[]} props.suppliers - List of available suppliers
+ * @param {Function} props.onClose - Callback when form is closed
+ * @param {Function} props.onSave - Callback when product is saved successfully
+ * @returns {JSX.Element} The product form modal
+ */
 export default function ProductForm({ product, suppliers, onClose, onSave }: ProductFormProps) {
   const { darkMode } = useTheme();
   const [formData, setFormData] = useState<Partial<Product>>(

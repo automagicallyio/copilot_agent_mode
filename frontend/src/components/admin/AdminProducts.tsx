@@ -31,6 +31,11 @@ interface Product {
 type SortField = 'name' | 'price' | 'sku' | 'unit' | 'supplier';
 type SortOrder = 'asc' | 'desc';
 
+/**
+ * Admin products management component
+ * Provides functionality to view, create, edit, and delete products (admin-only)
+ * @returns {JSX.Element} The admin products page with CRUD operations
+ */
 export default function AdminProducts() {
   const { isAdmin } = useAuth();
   const { darkMode } = useTheme();

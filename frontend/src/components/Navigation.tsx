@@ -3,6 +3,11 @@ import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { useState } from 'react';
 
+/**
+ * Navigation component providing main site navigation and user controls
+ * Includes authentication status, admin menu, and theme toggle functionality
+ * @returns {JSX.Element} The navigation bar component
+ */
 export default function Navigation() {
   const { isLoggedIn, isAdmin, logout } = useAuth();
   const { darkMode, toggleTheme } = useTheme();

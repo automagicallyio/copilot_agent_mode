@@ -3,6 +3,11 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 
+/**
+ * Login page component for user authentication
+ * Provides email/password login form with error handling and navigation
+ * @returns {JSX.Element} The login page with authentication form
+ */
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
