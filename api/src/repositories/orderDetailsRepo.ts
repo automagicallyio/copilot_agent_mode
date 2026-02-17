@@ -161,7 +161,11 @@ export class OrderDetailsRepository {
   }
 }
 
-// Factory function to create repository instance
+/**
+ * Factory function to create a new OrderDetailsRepository instance
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<OrderDetailsRepository>} A new repository instance
+ */
 export async function createOrderDetailsRepository(
   isTest: boolean = false,
 ): Promise<OrderDetailsRepository> {
@@ -172,6 +176,11 @@ export async function createOrderDetailsRepository(
 // Singleton instance for default usage
 let orderDetailsRepo: OrderDetailsRepository | null = null;
 
+/**
+ * Gets or creates a singleton instance of OrderDetailsRepository
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<OrderDetailsRepository>} The repository singleton instance
+ */
 export async function getOrderDetailsRepository(
   isTest: boolean = false,
 ): Promise<OrderDetailsRepository> {

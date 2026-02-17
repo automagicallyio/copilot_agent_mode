@@ -131,7 +131,11 @@ export class HeadquartersRepository {
   }
 }
 
-// Factory function to create repository instance
+/**
+ * Factory function to create a new HeadquartersRepository instance
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<HeadquartersRepository>} A new repository instance
+ */
 export async function createHeadquartersRepository(
   isTest: boolean = false,
 ): Promise<HeadquartersRepository> {
@@ -142,6 +146,11 @@ export async function createHeadquartersRepository(
 // Singleton instance for default usage
 let headquartersRepo: HeadquartersRepository | null = null;
 
+/**
+ * Gets or creates a singleton instance of HeadquartersRepository
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<HeadquartersRepository>} The repository singleton instance
+ */
 export async function getHeadquartersRepository(
   isTest: boolean = false,
 ): Promise<HeadquartersRepository> {

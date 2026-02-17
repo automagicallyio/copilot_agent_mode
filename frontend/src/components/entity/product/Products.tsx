@@ -16,6 +16,10 @@ interface Product {
   discount?: number;
 }
 
+/**
+ * Fetches the list of products from the API
+ * @returns {Promise<Product[]>} A promise that resolves to an array of products
+ */
 const fetchProducts = async (): Promise<Product[]> => {
   const { data } = await axios.get(`${api.baseURL}${api.endpoints.products}`);
   return data;

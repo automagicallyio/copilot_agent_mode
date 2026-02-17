@@ -7,6 +7,11 @@ import { runMigrations } from './db/migrate';
 import { seedDatabase } from './db/seed';
 import { closeDatabase } from './db/sqlite';
 
+/**
+ * Initialize the database with migrations and optional seed data
+ * @param shouldSeed - Whether to seed the database with initial data (default: true)
+ * @throws {Error} If migration or seeding fails
+ */
 async function initializeDatabase(shouldSeed: boolean = true): Promise<void> {
   console.log('🚀 Initializing database...');
 
