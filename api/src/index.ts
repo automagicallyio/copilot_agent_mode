@@ -86,7 +86,11 @@ app.get('/', (req, res) => {
 // Add error handling middleware
 app.use(errorHandler);
 
-// Initialize database and start server
+/**
+ * Initialize database and start the Express server
+ * Runs database migrations and starts listening on the configured port
+ * @throws {Error} If database initialization or server startup fails
+ */
 async function startServer() {
   try {
     console.log('🚀 Initializing database...');

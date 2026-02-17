@@ -2,7 +2,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from './themeContextUtils';
 
-// Separate hook into its own component file to satisfy fast refresh
+/**
+ * Custom hook to access theme context
+ * Provides access to dark mode state and theme toggle function
+ * @returns {Object} Theme context containing darkMode state and toggleTheme function
+ * @throws {Error} If used outside of ThemeProvider
+ */
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
@@ -11,7 +16,13 @@ export const useTheme = () => {
   return context;
 };
 
-// Main component export
+/**
+ * Theme context provider component
+ * Manages dark/light theme state and persists preference to localStorage
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.children - Child components to be wrapped with theme context
+ * @returns {JSX.Element} Provider component with theme context
+ */
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');

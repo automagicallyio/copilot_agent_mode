@@ -7,6 +7,11 @@ declare global {
   }
 }
 
+/**
+ * Determines the API base URL based on runtime configuration or environment
+ * Supports runtime config injection, GitHub Codespaces auto-detection, and local development
+ * @returns {string} The base URL for API requests
+ */
 const getBaseUrl = () => {
   // First check runtime configuration (from runtime-config.js)
   if (typeof window !== 'undefined' && window.RUNTIME_CONFIG?.API_URL) {

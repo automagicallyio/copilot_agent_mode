@@ -141,7 +141,11 @@ export class BranchesRepository {
   }
 }
 
-// Factory function to create repository instance
+/**
+ * Factory function to create a new BranchesRepository instance
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<BranchesRepository>} A new repository instance
+ */
 export async function createBranchesRepository(
   isTest: boolean = false,
 ): Promise<BranchesRepository> {
@@ -152,6 +156,11 @@ export async function createBranchesRepository(
 // Singleton instance for default usage
 let branchesRepo: BranchesRepository | null = null;
 
+/**
+ * Gets or creates a singleton instance of BranchesRepository
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<BranchesRepository>} The repository singleton instance
+ */
 export async function getBranchesRepository(isTest: boolean = false): Promise<BranchesRepository> {
   const isTestEnv = isTest || process.env.NODE_ENV === 'test' || process.env.VITEST === 'true';
   if (isTestEnv) {

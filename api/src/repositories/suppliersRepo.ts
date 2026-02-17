@@ -126,7 +126,11 @@ export class SuppliersRepository {
   }
 }
 
-// Factory function to create repository instance
+/**
+ * Factory function to create a new SuppliersRepository instance
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<SuppliersRepository>} A new repository instance
+ */
 export async function createSuppliersRepository(
   isTest: boolean = false,
 ): Promise<SuppliersRepository> {
@@ -137,6 +141,11 @@ export async function createSuppliersRepository(
 // Singleton instance for default usage
 let suppliersRepo: SuppliersRepository | null = null;
 
+/**
+ * Gets or creates a singleton instance of SuppliersRepository
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<SuppliersRepository>} The repository singleton instance
+ */
 export async function getSuppliersRepository(
   isTest: boolean = false,
 ): Promise<SuppliersRepository> {

@@ -1,5 +1,10 @@
 import { useTheme } from '../context/ThemeContext';
 
+/**
+ * About page component displaying company information and mission
+ * Provides details about OctoCAT Supply's purpose and product features
+ * @returns {JSX.Element} The about page with company information
+ */
 const About = () => {
   const { darkMode } = useTheme();
 

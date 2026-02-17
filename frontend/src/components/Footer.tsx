@@ -1,6 +1,11 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
+/**
+ * Footer component displaying company information, links, and social media
+ * Adapts styling based on the current theme (dark/light mode)
+ * @returns {JSX.Element} The footer component with multiple sections
+ */
 const Footer: React.FC = () => {
   const { darkMode } = useTheme();
 

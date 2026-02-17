@@ -10,7 +10,11 @@ import { ThemeProvider } from './context/ThemeContext';
 import AdminProducts from './components/admin/AdminProducts';
 import { useTheme } from './context/ThemeContext';
 
-// Wrapper component to apply theme classes
+/**
+ * Wrapper component that applies theme classes to the entire application
+ * Integrates with ThemeContext to handle dark/light mode transitions
+ * @returns {JSX.Element} The themed application with routing
+ */
 function ThemedApp() {
   const { darkMode } = useTheme();
 
@@ -35,6 +39,10 @@ function ThemedApp() {
   );
 }
 
+/**
+ * Root application component that provides authentication and theme context to all children
+ * @returns {JSX.Element} The application wrapped with context providers
+ */
 function App() {
   return (
     <AuthProvider>

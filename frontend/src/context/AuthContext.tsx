@@ -9,6 +9,13 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
+/**
+ * Authentication context provider component
+ * Manages user authentication state and provides login/logout functionality
+ * @param {Object} props - Component props
+ * @param {ReactNode} props.children - Child components to be wrapped with auth context
+ * @returns {JSX.Element} Provider component with authentication context
+ */
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -34,6 +41,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * Custom hook to access authentication context
+ * Must be used within an AuthProvider component
+ * @returns {AuthContextType} The authentication context containing login state and auth functions
+ * @throws {Error} If used outside of AuthProvider
+ */
 // eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
   const context = useContext(AuthContext);

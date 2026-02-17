@@ -140,7 +140,11 @@ export class ProductsRepository {
   }
 }
 
-// Factory function to create repository instance
+/**
+ * Factory function to create a new ProductsRepository instance
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<ProductsRepository>} A new repository instance
+ */
 export async function createProductsRepository(
   isTest: boolean = false,
 ): Promise<ProductsRepository> {
@@ -151,6 +155,11 @@ export async function createProductsRepository(
 // Singleton instance for default usage
 let productsRepo: ProductsRepository | null = null;
 
+/**
+ * Gets or creates a singleton instance of ProductsRepository
+ * @param {boolean} isTest - Whether to use test database configuration (default: false)
+ * @returns {Promise<ProductsRepository>} The repository singleton instance
+ */
 export async function getProductsRepository(isTest: boolean = false): Promise<ProductsRepository> {
   if (!productsRepo) {
     productsRepo = await createProductsRepository(isTest);
